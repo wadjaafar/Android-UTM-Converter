@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.eebax.rynconverter.Convert">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/degrees"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/decimal_degrees"
+                android:id="@+id/decimal_degrees"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:layout_alignTop="@+id/degrees"
+                android:layout_alignLeft="@+id/degrees"
+                android:layout_alignStart="@+id/degrees"
+                android:textColor="@color/colorPrimary"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:layout_marginTop="32dp"
+                android:hint="Latitude"
+                android:lines="1"
+                android:id="@+id/latitude"
+                android:layout_alignTop="@+id/card_view"
+                android:layout_alignLeft="@+id/card_view"
+                android:layout_alignStart="@+id/card_view" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:padding="10dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:hint="Longitude"
+                android:layout_marginTop="77dp"
+                android:id="@+id/longitude"
+                android:layout_below="@+id/editText"
+                android:layout_alignLeft="@+id/card_view"
+                android:layout_alignStart="@+id/card_view" />
+
+            <Button
+                android:id="@+id/convert_decimal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/card_view"
+                android:layout_alignLeft="@+id/card_view"
+                android:layout_alignBottom="@+id/card_view"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="124dp"
+                android:ems="8"
+                android:onClick="convertDecimal"
+                android:padding="2dp"
+                android:text="Convert" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/utm"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_below="@+id/degrees"
+            android:layout_alignStart="@+id/degrees"
+            android:layout_alignLeft="@+id/degrees"
+            android:layout_alignEnd="@+id/degrees"
+            android:layout_alignRight="@+id/degrees"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/convert_utm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/utm"
+                android:layout_alignLeft="@+id/utm"
+                android:layout_alignBottom="@+id/utm"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="218dp"
+                android:ems="8"
+                android:onClick="convertUTM"
+                android:padding="2dp"
+                android:text="Convert" />
+
+            <EditText
+                android:id="@+id/northing"
+                android:inputType="numberDecimal|numberSigned"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editText"
+                android:layout_alignStart="@+id/card_view"
+                android:layout_alignLeft="@+id/card_view"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="77dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:hint="Northing"
+                android:lines="1"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/utm"
+                android:layout_alignLeft="@+id/utm"
+                android:layout_alignBottom="@+id/utm"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="122dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:hint="Longitude Zone"
+                android:inputType="number"
+                android:lines="1"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/easting"
+                android:inputType="numberDecimal|numberSigned"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/card_view"
+                android:layout_alignLeft="@+id/card_view"
+                android:layout_alignTop="@+id/card_view"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:hint="Easting"
+                android:lines="1"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/lat_zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/utm"
+                android:layout_alignLeft="@+id/utm"
+                android:layout_alignBottom="@+id/utm"
+                android:maxLength="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="169dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Latitude Zone"
+                android:lines="1"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/utm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/degrees"
+                android:layout_alignLeft="@+id/degrees"
+                android:layout_alignTop="@+id/degrees"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/utm"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
